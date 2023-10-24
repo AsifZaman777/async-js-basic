@@ -51,7 +51,7 @@ api.createOrder(cart, function (){
 })
 
 //its a callback hell / pyramid of doom 
-// the solution is inversion of control
+// the solution is inversion of control.
 
 
 
