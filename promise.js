@@ -19,5 +19,14 @@ over the code. If there are some bugs in the higher order func then the callback
 */
 
 
+//test a public api
+const chicagoArtApi =  "https://api.artic.edu/api/v1/artworks";
+
+const user = fetch(chicagoArtApi); //fetch returns as a promise 
+
+user.then((x) =>{console.log(x); document.write("feteched")} ); // all the data in the console
+
+
+
  
 
