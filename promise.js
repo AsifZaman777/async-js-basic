@@ -18,6 +18,40 @@ over the code. If there are some bugs in the higher order func then the callback
 
 */
 
+//difference between the callback hell and the promise 
+
+const cart=["laptops","gpu","bags"];
+
+
+createOrderApi(cart,function (orderId){
+    proceedToPyament(orderId,function (paymentInfo){
+        paymentReceipt(paymentInfo,function (){
+              updateUserWallet();
+       });
+    });
+});
+
+
+//---------------------------------------------------------------------------------------------------------------
+///promise 
+
+const promise = createOrderApi(cart);  // promise returns an object with undefined value
+
+//{key: fulfilled}; after the asynchronous operation when createOrderAPI done its work then `then()` works 
+
+promise.then(orderID=> {return proceedToPyament(orderID)});
+
+//{key: fulfilled};
+//---------------------------------------------------------------------------------------------------------------
+
+//promise chaining 
+createOrderApi(cart)
+.then(orderId => {return proceedToPyament(orderId)})
+.then(paymentInfo => {return paymentReceipt(paymentInfo)})
+.then(updateUserWallet());
+
+
+
 
 //test a public api
 const chicagoArtApi =  "https://api.artic.edu/api/v1/artworks";
@@ -25,6 +59,9 @@ const chicagoArtApi =  "https://api.artic.edu/api/v1/artworks";
 const user = fetch(chicagoArtApi); //fetch returns as a promise 
 
 user.then((x) =>{console.log(x); document.write("feteched")} ); // all the data in the console
+
+
+
 
 
 
