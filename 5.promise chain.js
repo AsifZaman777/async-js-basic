@@ -6,7 +6,7 @@ createOrder(cart)
     return orderId;
   })
   .catch((err) => {
-    console.log("Cart is not valid"); // Error from the createOrder promise
+    console.log(err); // Error from the createOrder promise
   })
   .then((orderId) => {
     return proceedToPayment(orderId);
