@@ -108,7 +108,7 @@ asyncPromiseHandler();
 `Actually here the promgram waited for 10s to resolve the promise but it didn't block the program rather it halted the execution and after 10s when the promise resolved then both of the message executed`.
 
 
-# Deep dive into Async Await 
+# Non blocking nature of JS with Async-await (Interview concepts) 
 
 - Who will be excecuted first? 
 ```
